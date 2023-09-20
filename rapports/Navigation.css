@@ -1,0 +1,112 @@
+body{
+
+  margin:0;
+
+  padding: 0;
+
+  font-family: sans-serif;
+
+  box-sizing:border-box ;
+
+}
+
+
+
+.navbar{
+
+ background-color: rgb(149, 88, 149);
+
+ display: flex;
+
+ justify-content: space-between;
+
+ align-items: left;
+
+}
+
+.navbar,h1{
+
+font-size: 25px;
+
+color: white;
+
+}
+
+
+
+
+
+/*.navbar > img{
+
+width: 50px;
+
+height: 65px;
+
+margin-left:0px;
+
+}
+
+background-image: url('./src/components/logo.png');*/
+
+
+
+
+
+.navbar ul{
+
+list-style: none;
+
+display: flex;;
+
+margin-right: 100px;
+
+gap: 13rem;
+
+
+
+}
+
+
+
+.logocls{
+
+width: 10;
+
+height: 20;
+
+}
+
+
+
+.nav-lists a:hover{
+
+
+
+background-color:aquamarine;
+
+color:black;
+
+}
+
+.nav-lists a{
+
+    
+
+    text-decoration: none;
+
+    display: flex;
+
+    color: white;
+
+   font-size: 15px;
+
+
+
+}
+
+.nav-list a:Home{
+
+  display: inline-block;
+
+}
+
