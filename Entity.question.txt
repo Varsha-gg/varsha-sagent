@@ -1,0 +1,79 @@
+package com.varsha.Rapports.Entity;
+
+import jakarta.persistence.*;
+
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+@Entity
+@Table(name = "question")
+public class Question {
+
+    @Id
+    @Basic
+    private int question_id;
+    private String content;
+    private Timestamp timestamb;
+    private String asker;
+
+    // Constructors
+    public Question() {
+        // Default constructor
+    }
+
+    public Question(int id, String content, Timestamp timestamb, String asker) {
+        this.question_id = id;
+        this.content = content;
+        this.timestamb = timestamb;
+        this.asker = asker;
+    }
+
+    // Getters and Setters
+    public long getId() {
+        return question_id;
+    }
+
+    public void setId(int id) {
+        this.question_id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Timestamp getTimestamb() {
+        return timestamb;
+    }
+
+
+    public void setTimestamp(Time timestamp) {
+        this.timestamb = timestamb;
+    }
+
+    public String getAsker() {
+        return asker;
+    }
+
+    public void setAsker(String user) {
+        this.asker = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + question_id +
+                ", content='" + content + '\'';
+
+    };
+}
+//    public String toString() {
+//        return "Category{" +
+//                "Category_id=" + Category_id +
+//                ", name='" + name + '\'' +
+//                ", parent=" + parent +
+//                '}';

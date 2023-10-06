@@ -1,0 +1,21 @@
+package com.varsha.Rapports.repository;
+
+
+import com.varsha.Rapports.Entity.Answer;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.varsha.Rapports.Entity.Question;
+import org.springframework.data.jpa.repository.*;
+import org.springframework.transaction.annotation.Transactional;
+
+
+public interface AnswerRepository extends JpaRepository<Answer,Integer> {
+    @Query("select coalesce(max(q.question_id), 0) from Answer q")
+    public Integer findMaxId();}
+
+//   @Modifying
+//   @Transactional
+//    @Query(value = "delete from Answer where answer_id = ?1", nativeQuery = true)
+//    public void deleteByAnswerId(Integer a_id);
+//}
+

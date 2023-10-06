@@ -1,0 +1,47 @@
+package com.varsha.Rapports.service.question;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import com.varsha.Rapports.Entity.Question;
+import com.varsha.Rapports.repository.QuestionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+
+public class questionService
+{
+    @Autowired
+    private QuestionRepository questionRepository;
+    public List<Question> getAllQuestions() {
+
+        return questionRepository.findAll();
+    }
+
+ public Question addQuestion(Question question) {
+        question.setId(questionRepository.findMaxId() + 1);
+        return questionRepository.save(question);
+    }
+ public String deleteQuestion(int question_id){
+
+        return "deleted" +question_id;
+ }
+
+    /*public Question updateQuestion(Question question) {
+        Optional<Question> optionalQuestion = questionRepository.findAllById(question.getId());
+        if (optionalQuestion.isPresent()){
+            Question questionrecord = optionalQuestion.get();
+            questionrecord.setId(question.getId();
+            return questionRepository.save(questionrecord);
+        }
+        else{
+            return null;
+        }*/
+
+    }
+
+
+
+
+

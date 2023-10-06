@@ -1,0 +1,34 @@
+package com.varsha.Rapports.service.question;
+
+import com.varsha.Rapports.Entity.Answer;
+import com.varsha.Rapports.Entity.Question;
+import com.varsha.Rapports.repository.AnswerRepository;
+import com.varsha.Rapports.repository.QuestionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+    @Service
+    public class answerService {
+        @Autowired
+        private AnswerRepository answerRepository;
+
+        public List<Answer> getAllAnswer() {
+            return answerRepository.findAll();
+        }
+
+        public Answer addAllAnswers(Answer answer) {
+            answer.setAnswer_id(answerRepository.findMaxId() + 1);
+            {
+                return answerRepository.save(answer);
+            }
+//            public String deleteAnswer(int answer_id){
+//
+//                return "deleted" + answer_id;
+
+            }
+
+
+    }
+
+

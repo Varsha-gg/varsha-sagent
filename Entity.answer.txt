@@ -1,0 +1,47 @@
+package com.varsha.Rapports.Entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.sql.Time;
+import java.sql.Timestamp;
+
+@Entity
+@Data
+@Table(name = "answer")
+public class Answer{
+
+    @Id
+    @Basic
+    private int answer_id;
+    private int question_id;
+    private String content;
+    private Time timestamb;
+    private String author;
+
+    // Constructors
+    public Answer() {
+    }
+
+    public Answer(int q_id, int a_id, String content, Time timestamp, String author) {
+        this.question_id=q_id;
+        this.answer_id = a_id;
+        this.content = content;
+        this.timestamb = timestamp;
+        this.author = author;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "id=" + question_id +
+                "id="+ answer_id+
+                ", content='" + content + '\'' +
+                ", timestamp=" + timestamb +
+                ", user='" + author + '\'' +
+                '}';
+    }
+}
+
+

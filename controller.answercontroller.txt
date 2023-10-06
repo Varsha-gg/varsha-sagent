@@ -1,0 +1,51 @@
+package com.varsha.Rapports.controller;
+import com.varsha.Rapports.repository.AnswerRepository;
+import com.varsha.Rapports.repository.QuestionRepository;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.varsha.Rapports.Entity.Answer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+import com.varsha.Rapports.Entity.Question;
+import java.util.List;
+import com.varsha.Rapports.service.question.answerService;
+
+@RestController
+public class Answercontroller {
+    @Autowired
+    answerService answerService;
+
+    @Autowired
+    AnswerRepository answerRepository;
+
+    @GetMapping("/getAllAnswers")
+    public List<Answer> getAllAnswers() {
+        return answerService.getAllAnswer();
+    }
+
+    @PostMapping("/addAnswer")
+    public Answer addAnswer(@RequestBody Answer answer) {
+        return answerService.addAllAnswers(answer);
+
+
+    }
+    @DeleteMapping("/deleteAnswer/{id}")
+            public String deleteAnswer( @PathVariable int id) {
+            answerRepository.deleteById(id);
+            return  "Answer Deleted!";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+

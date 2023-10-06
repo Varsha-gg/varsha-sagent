@@ -1,0 +1,14 @@
+package com.varsha.Rapports.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.varsha.Rapports.Entity.Question;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.Optional;
+
+public interface QuestionRepository extends JpaRepository<Question,Integer> {
+    @Query("select coalesce(max(q.question_id), 0) from Question q")
+    public Integer findMaxId();
+
+    Optional<Question> findAllById(long id);
+}
